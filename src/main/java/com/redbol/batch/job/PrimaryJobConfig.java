@@ -26,7 +26,6 @@ public class PrimaryJobConfig {
 	}
     // JobBuilderFactory를 통해서 tutorialJob을 생성
     @Bean
-    @Primary
     @Qualifier("primaryJob")
     public Job primaryJob() {
         return jobBuilderFactory.get("primaryJob")
