@@ -1,0 +1,19 @@
+mybatis:
+  check-config-location: true
+  config-location: classpath:mybatis/mybatis-config.xml
+server:
+  port: 8080
+spring:
+  batch:
+    job:
+      enabled: false
+      names: ${job.name:NONE}
+  datasource:
+    hikari:
+      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://localhost:3306/feely?characterEncoding=UTF-8&serverTimezone=UTC
+      password: '0411'
+      username: root
+
+
+#mybatis.mapper-locations:mapper/*.xml
