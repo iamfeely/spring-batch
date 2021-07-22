@@ -19,6 +19,7 @@ public class TutorialScheduler {
 
     private final Job job;  // primaryJob
     private final JobLauncher jobLauncher;
+    
     TutorialScheduler(Job job,JobLauncher jobLauncher){
     	this.job=job;
     	this.jobLauncher=jobLauncher;
