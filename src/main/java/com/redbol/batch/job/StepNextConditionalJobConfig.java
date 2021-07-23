@@ -25,7 +25,7 @@ public class StepNextConditionalJobConfig {
 			this.stepBuilderFactory=stepBuilderFactory; 
 		}
 	    @Bean
-	    @Primary
+	   // @Primary
 	    public Job stepNextConditionalJob() {
 	        return jobBuilderFactory.get("stepNextConditionalJob")
 	                .start(conditionalJobStep1())
@@ -48,14 +48,12 @@ public class StepNextConditionalJobConfig {
 	        return stepBuilderFactory.get("conditionalJobStep1")
 	                .tasklet((contribution, chunkContext) -> {
 	                	System.out.println(">>>>> This is stepNextConditionalJob Step1");
-
 	                    /**
 	                        ExitStatus를 FAILED로 지정한다.
 	                        해당 status를 보고 flow가 진행된다.
 	                    **/
 	                    contribution.setExitStatus(ExitStatus.FAILED);
 //	                    contribution.setExitStatus(ExitStatus.COMPLETED);
-
 	                    return RepeatStatus.FINISHED;
 	                })
 	                .build();
